@@ -1,8 +1,17 @@
-import { Button } from "@/components/ui/button"
-import { ChevronDown } from "lucide-react"
-import Image from "next/image"
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 export default function HeroSection() {
+  const handleScroll = () => {
+    const target = document.getElementById("about");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
       <div className="container mx-auto px-4">
@@ -21,10 +30,10 @@ export default function HeroSection() {
               MSME-verified certification.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white text-lg py-6 px-8">
-                Apply Now
-              </Button>
-              <Button variant="outline" className="border-slate-700 text-white hover:bg-slate-800 text-lg py-6 px-8">
+              <Button
+                onClick={handleScroll}
+                className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white text-lg py-6 px-8"
+              >
                 Learn More
               </Button>
             </div>
@@ -41,12 +50,6 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
-        <div className="flex justify-center mt-16">
-          <a href="#about" className="flex flex-col items-center text-slate-400 hover:text-white transition-colors">
-            <span className="mb-2">Scroll to learn more</span>
-            <ChevronDown className="animate-bounce" />
-          </a>
-        </div>
       </div>
 
       {/* Background elements */}
@@ -55,6 +58,5 @@ export default function HeroSection() {
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/10 rounded-full filter blur-3xl"></div>
       </div>
     </section>
-  )
+  );
 }
-

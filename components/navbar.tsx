@@ -1,22 +1,29 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Code, Zap } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu, Code, Zap } from "lucide-react";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
     { name: "Home", href: "#" },
-    { name: "About", href: "#about" },
-    { name: "Programs", href: "#programs" },
-    { name: "Benefits", href: "#benefits" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact", href: "#contact" },
-  ]
+    { name: "About", href: "about" },
+    { name: "Programs", href: "programs" },
+    { name: "Benefits", href: "benefits" },
+    { name: "Testimonials", href: "testimonials" },
+    { name: "Contact", href: "contact" },
+  ];
+
+  const handleScroll = (id) => {
+    const target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
@@ -35,13 +42,13 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
-              <Link
+              <button
                 key={link.name}
-                href={link.href}
                 className="text-slate-300 hover:text-white transition-colors font-medium"
+                onClick={() => handleScroll(link.href)}
               >
                 {link.name}
-              </Link>
+              </button>
             ))}
           </nav>
 
@@ -74,14 +81,16 @@ export default function Navbar() {
                 </div>
                 <nav className="flex flex-col space-y-6">
                   {navLinks.map((link) => (
-                    <Link
+                    <button
                       key={link.name}
-                      href={link.href}
                       className="text-slate-300 hover:text-white transition-colors text-lg font-medium"
-                      onClick={() => setIsOpen(false)}
+                      onClick={() => {
+                        handleScroll(link.href);
+                        setIsOpen(false); // Close the mobile menu
+                      }}
                     >
                       {link.name}
-                    </Link>
+                    </button>
                   ))}
                 </nav>
                 <div className="mt-auto pt-8">
@@ -95,6 +104,5 @@ export default function Navbar() {
         </div>
       </div>
     </header>
-  )
+  );
 }
-
