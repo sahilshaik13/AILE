@@ -13,12 +13,12 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+    <section id="hero" className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <div className="inline-block px-3 py-1 mb-6 rounded-full bg-slate-800 text-cyan-400 text-sm font-medium">
-              MSME Registered Training Program
+              MSME Registered Enterprise Training Program
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
@@ -26,7 +26,7 @@ export default function HeroSection() {
               </span>
             </h1>
             <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-xl mx-auto lg:mx-0">
-              Free training and internship sessions to build real-world projects, attend tech meetups, and receive
+              Free training and internship sessions to build real-world projects, attend tech meetups, and much more... receive
               MSME-verified certification.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -41,7 +41,7 @@ export default function HeroSection() {
           <div className="flex justify-center lg:justify-end">
             <div className="relative w-full max-w-md h-[400px]">
               <Image
-                src="/placeholder.svg?height=500&width=500"
+                src="/images/colourful-illustration-programmer-working.png?height=700&width=700"
                 alt="Tech illustration"
                 fill
                 className="object-contain"

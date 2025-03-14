@@ -10,11 +10,10 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "#" },
+    { name: "Home", href: "hero" },
     { name: "About", href: "about" },
     { name: "Programs", href: "programs" },
     { name: "Benefits", href: "benefits" },
-    { name: "Testimonials", href: "testimonials" },
     { name: "Contact", href: "contact" },
   ];
 
@@ -29,15 +28,15 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2 z-10">
-            <div className="bg-gradient-to-r from-cyan-500 to-blue-500 p-2 rounded-lg">
-              <Code className="h-6 w-6 text-white" />
-            </div>
-            <span className="font-bold text-xl tracking-tight">
-              <span className="text-cyan-400">App</span>
-              <span className="text-white">Ignite</span>
-            </span>
-          </Link>
+        <div className="flex items-center space-x-2">
+          <div className="bg-gradient-to-r from-cyan-500 to-blue-500 p-2 rounded-lg">
+            <img src="/path-to-your-logo.png" alt="Logo" className="h-6 w-6" />
+          </div>
+          <span className="font-bold text-xl tracking-tight">
+            <span className="text-cyan-400">App</span>
+            <span className="text-white">Ignite</span>
+          </span>
+        </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
@@ -53,9 +52,11 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden md:block z-10">
+          <Link href="#" className="w-full">
             <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
               Apply Now <Zap className="ml-2 h-4 w-4" />
             </Button>
+          </Link>
           </div>
 
           {/* Mobile Navigation */}
@@ -69,15 +70,15 @@ export default function Navbar() {
             <SheetContent side="right" className="bg-slate-900 text-white border-slate-800">
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between mb-8">
-                  <Link href="/" className="flex items-center space-x-2">
-                    <div className="bg-gradient-to-r from-cyan-500 to-blue-500 p-2 rounded-lg">
-                      <Code className="h-5 w-5 text-white" />
-                    </div>
-                    <span className="font-bold text-lg">
-                      <span className="text-cyan-400">App</span>
-                      <span className="text-white">Ignite</span>
-                    </span>
-                  </Link>
+                <div className="flex items-center space-x-2">
+                  <div className="bg-gradient-to-r from-cyan-500 to-blue-500 p-2 rounded-lg">
+                    <img src="/path-to-your-logo.png" alt="Logo" className="h-6 w-6" />
+                  </div>
+                  <span className="font-bold text-xl tracking-tight">
+                    <span className="text-cyan-400">App</span>
+                    <span className="text-white">Ignite</span>
+                  </span>
+                </div>
                 </div>
                 <nav className="flex flex-col space-y-6">
                   {navLinks.map((link) => (
@@ -94,9 +95,11 @@ export default function Navbar() {
                   ))}
                 </nav>
                 <div className="mt-auto pt-8">
-                  <Button className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                    Apply Now <Zap className="ml-2 h-4 w-4" />
-                  </Button>
+                  <Link href="#" className="w-full">
+                    <Button className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
+                      Apply Now <Zap className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </SheetContent>

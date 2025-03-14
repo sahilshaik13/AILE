@@ -1,202 +1,124 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Code, Database, Globe, Smartphone, Cpu, Layers } from "lucide-react"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Rocket, Brain, Infinity } from "lucide-react";
 
-export default function ProgramsSection() {
-  const [activeTab, setActiveTab] = useState("web-dev")
-
-  const programs = [
+export default function BuildWithAISection() {
+  const tabs = [
     {
-      id: "web-dev",
-      title: "Web Development",
-      icon: <Globe className="h-6 w-6" />,
-      description: "Learn to build modern, responsive websites and web applications using the latest technologies.",
-      duration: "12 weeks",
-      technologies: ["HTML/CSS", "JavaScript", "React", "Node.js", "Express", "MongoDB"],
-      projects: ["E-commerce platform", "Social media dashboard", "Portfolio website"],
+      id: "about",
+      title: "About Build with AI",
+      icon: <Rocket className="h-6 w-6" />,
+      content: (
+        <>
+          <h1 className="text-4xl font-bold mb-4">
+            Welcome to <strong className="text-cyan-400">Build with AI</strong>
+          </h1>
+          <p className="text-slate-300 mb-4">
+            A revolutionary initiative where you learn without boundaries. Forget traditional programs—this is an open-ended journey designed to empower you with AI skills and creativity.
+          </p>
+          <p className="text-slate-300">
+            You’ll explore limitless possibilities, discover the potential of AI, and take control of your learning experience to build cutting-edge projects and solutions.
+          </p>
+          <br></br>
+          <p>
+            <strong className="text-cyan-400">Key Highlights:</strong>
+          </p>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Dive into AI-powered creativity, innovation, and problem-solving.</li>
+            <li>Collaborate with a global community of learners and creators.</li>
+            <li>Access hands-on projects, interactive tutorials, and expert guidance.</li>
+            <li>Unleash the potential of AI to make meaningful contributions in any field.</li>
+          </ul>
+        </>
+      ),
     },
     {
-      id: "mobile-dev",
-      title: "Mobile App Development",
-      icon: <Smartphone className="h-6 w-6" />,
-      description: "Create native and cross-platform mobile applications for iOS and Android devices.",
-      duration: "14 weeks",
-      technologies: ["React Native", "Flutter", "Firebase", "Redux", "GraphQL", "REST APIs"],
-      projects: ["Food delivery app", "Fitness tracker", "Chat application"],
+      id: "learning",
+      title: "What You'll Learn",
+      icon: <Brain className="h-6 w-6" />,
+      content: (
+        <ul className="list-disc list-inside text-slate-300 space-y-2">
+          <li>
+            <strong className="text-cyan-400">Master AI Tools:</strong> Learn how to efficiently use cutting-edge AI technologies like machine learning frameworks, natural language processing (NLP) models, and computer vision libraries. Gain hands-on experience with popular tools such as TensorFlow, PyTorch, and OpenAI API to turn your innovative ideas into reality.
+          </li>
+          <li>
+            <strong className="text-cyan-400">Prompt Engineering:</strong> Dive into the art of designing precise and effective prompts to interact with AI models. Understand how to structure queries, refine instructions, and optimize outputs to make AI work smarter for tasks ranging from creative writing to data analysis and problem-solving.
+          </li>
+          <li>
+            <strong className="text-cyan-400">Environment Adaptability:</strong> Adapt to diverse work environments by mastering multiple tools, platforms, and workflows. Seamlessly integrate AI technologies into web apps, mobile platforms, or standalone systems, and collaborate across teams using the latest tech stacks and APIs.
+          </li>
+          <li>
+            <strong className="text-cyan-400">Real-World Application:</strong> Leverage AI to address global challenges and innovate in fields like healthcare, education, finance, and sustainability. Develop personalized recommendation systems, automate tedious workflows, and use AI to gain actionable insights from complex datasets.
+          </li>
+          <li>
+            <strong className="text-cyan-400">Creative Problem-Solving:</strong> Train your mind to think outside the box and use AI as a creative partner. Whether it’s generating unique art, designing smarter products, or creating immersive virtual experiences, unleash the limitless potential of artificial intelligence.
+          </li>
+          <li>
+            <strong className="text-cyan-400">Collaboration and Networking:</strong> Connect with a global community of AI enthusiasts, experts, and innovators. Share your projects, exchange ideas, and learn from others to accelerate your growth and contribute meaningfully to the AI ecosystem.
+          </li>
+        </ul>
+      ),
     },
     {
-      id: "data-science",
-      title: "Data Science",
-      icon: <Database className="h-6 w-6" />,
-      description: "Analyze and interpret complex data to help organizations make better decisions.",
-      duration: "16 weeks",
-      technologies: ["Python", "Pandas", "NumPy", "Matplotlib", "Scikit-learn", "TensorFlow"],
-      projects: ["Predictive analytics model", "Data visualization dashboard", "Recommendation system"],
+      id: "vision",
+      title: "Our Vision",
+      icon: <Infinity className="h-6 w-6" />,
+      content: (
+        <>
+          <p className="text-slate-300 mb-4">
+            Our mission is to create a thriving community of innovators who harness the power of AI to shape a better future. At <strong className="text-cyan-400">Build with AI</strong>, we believe in using AI responsibly and creatively to tackle real-world challenges, transform industries, and spark groundbreaking ideas.
+          </p>
+          <p className="text-slate-300 mb-4">
+            This initiative encourages individuals to break free from traditional boundaries and explore the uncharted territories of AI innovation. Whether it’s automating processes, developing sustainable solutions, or enhancing human creativity, the possibilities are as limitless as your imagination.
+          </p>
+          <p className="text-slate-300">
+            <strong className="text-cyan-400">Build with AI</strong> is for dreamers, doers, and creators who are ready to challenge limits, embrace collaboration, and thrive in a dynamic environment filled with growth and endless opportunities. Together, we’ll redefine what's possible and make a lasting impact on the world.
+          </p>
+        </>
+      ),
     },
-    {
-      id: "ai-ml",
-      title: "AI & Machine Learning",
-      icon: <Cpu className="h-6 w-6" />,
-      description: "Build intelligent systems that can learn from data and make predictions or decisions.",
-      duration: "16 weeks",
-      technologies: ["Python", "TensorFlow", "PyTorch", "Keras", "OpenCV", "Natural Language Processing"],
-      projects: ["Image recognition system", "Chatbot", "Predictive model"],
-    },
-    {
-      id: "devops",
-      title: "DevOps & Cloud",
-      icon: <Layers className="h-6 w-6" />,
-      description: "Learn to automate and optimize the software development lifecycle using cloud technologies.",
-      duration: "10 weeks",
-      technologies: ["Docker", "Kubernetes", "AWS", "CI/CD", "Terraform", "Monitoring tools"],
-      projects: ["Automated deployment pipeline", "Microservices architecture", "Cloud infrastructure setup"],
-    },
-    {
-      id: "fullstack",
-      title: "Full Stack Development",
-      icon: <Code className="h-6 w-6" />,
-      description: "Master both frontend and backend development to build complete web applications.",
-      duration: "16 weeks",
-      technologies: ["JavaScript", "React", "Node.js", "Express", "MongoDB", "GraphQL", "Redux"],
-      projects: ["Social network", "Project management tool", "E-learning platform"],
-    },
-  ]
+  ];
 
   return (
     <section id="programs" className="py-16 md:py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Our <span className="text-cyan-400">Training</span> Programs
+            <span className="text-cyan-400">Build with AI</span>: Learn Without Limits
           </h2>
           <p className="text-slate-300 max-w-3xl mx-auto">
-            Choose from our diverse range of free training programs designed to equip you with in-demand skills and
-            practical experience through real-world projects.
+            Dive into a world of possibilities with our innovative program. Discover how AI can empower you to create, learn, and build the future—without any limitations.
           </p>
         </div>
 
-        <Tabs defaultValue="web-dev" className="w-full" onValueChange={setActiveTab}>
+        <Tabs defaultValue="about" className="w-full">
           <div className="flex justify-center mb-8 overflow-x-auto pb-2">
-            <TabsList className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 bg-slate-800/50 p-1">
-              {programs.map((program) => (
+            <TabsList className="flex bg-slate-800/50 p-1 space-x-2 rounded-lg">
+              {tabs.map((tab) => (
                 <TabsTrigger
-                  key={program.id}
-                  value={program.id}
-                  className={`data-[state=active]:bg-gradient-to-r data-[state=active]:from-cyan-500 data-[state=active]:to-blue-500 data-[state=active]:text-white`}
+                  key={tab.id}
+                  value={tab.id}
+                  className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-cyan-500 data-[state=active]:to-blue-500 data-[state=active]:text-white px-4 py-2 rounded-lg"
                 >
                   <div className="flex flex-col items-center">
-                    {program.icon}
-                    <span className="mt-1 text-sm whitespace-nowrap">{program.title}</span>
+                    {tab.icon}
+                    <span className="mt-1 text-sm whitespace-nowrap">{tab.title}</span>
                   </div>
                 </TabsTrigger>
               ))}
             </TabsList>
           </div>
 
-          {programs.map((program) => (
-            <TabsContent key={program.id} value={program.id} className="mt-0">
+          {tabs.map((tab) => (
+            <TabsContent key={tab.id} value={tab.id} className="mt-0">
               <div className="bg-slate-800/30 rounded-2xl p-6 md:p-8 border border-slate-700">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div>
-                    <div className="flex items-center mb-4">
-                      <div className="bg-gradient-to-r from-cyan-500 to-blue-500 w-12 h-12 rounded-lg flex items-center justify-center mr-4">
-                        {program.icon}
-                      </div>
-                      <h3 className="text-2xl font-bold">{program.title}</h3>
-                    </div>
-                    <p className="text-slate-300 mb-6">{program.description}</p>
-
-                    <div className="mb-6">
-                      <h4 className="text-lg font-semibold mb-3 text-cyan-400">Program Details</h4>
-                      <ul className="space-y-2">
-                        <li className="flex items-center">
-                          <span className="bg-slate-700 rounded-full w-2 h-2 mr-3"></span>
-                          <span className="text-slate-300">
-                            <strong>Duration:</strong> {program.duration}
-                          </span>
-                        </li>
-                        <li className="flex items-center">
-                          <span className="bg-slate-700 rounded-full w-2 h-2 mr-3"></span>
-                          <span className="text-slate-300">
-                            <strong>Format:</strong> Online & In-person sessions
-                          </span>
-                        </li>
-                        <li className="flex items-center">
-                          <span className="bg-slate-700 rounded-full w-2 h-2 mr-3"></span>
-                          <span className="text-slate-300">
-                            <strong>Certificate:</strong> MSME-verified upon completion
-                          </span>
-                        </li>
-                        <li className="flex items-center">
-                          <span className="bg-slate-700 rounded-full w-2 h-2 mr-3"></span>
-                          <span className="text-slate-300">
-                            <strong>Mentorship:</strong> 1-on-1 guidance from industry experts
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
-                      Apply for {program.title}
-                    </Button>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="bg-slate-900/80 rounded-xl p-6 border border-slate-700">
-                      <h4 className="text-lg font-semibold mb-3 text-cyan-400">Technologies Covered</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {program.technologies.map((tech, index) => (
-                          <span key={index} className="bg-slate-800 text-slate-300 px-3 py-1 rounded-full text-sm">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="bg-slate-900/80 rounded-xl p-6 border border-slate-700">
-                      <h4 className="text-lg font-semibold mb-3 text-cyan-400">Sample Projects</h4>
-                      <ul className="space-y-2">
-                        {program.projects.map((project, index) => (
-                          <li key={index} className="flex items-start">
-                            <div className="bg-cyan-500/20 p-1 rounded mr-3 mt-1">
-                              <svg
-                                className="h-3 w-3 text-cyan-500"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                              >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                              </svg>
-                            </div>
-                            <span className="text-slate-300">{project}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="md:col-span-2 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-xl p-6 border border-slate-700">
-                      <h4 className="text-lg font-semibold mb-3">What You'll Learn</h4>
-                      <p className="text-slate-300 mb-4">
-                        Our {program.title} program is designed to take you from beginner to job-ready. You'll build
-                        real-world projects, receive personalized feedback, and develop a portfolio that showcases your
-                        skills to potential employers.
-                      </p>
-                      <p className="text-slate-300">
-                        Upon completion, you'll receive an MSME-verified certificate and ongoing support for job
-                        placement and interview preparation.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                {tab.content}
               </div>
             </TabsContent>
           ))}
         </Tabs>
       </div>
     </section>
-  )
+  );
 }
-

@@ -40,9 +40,9 @@ export default function AboutSection() {
             <div className="bg-gradient-to-r from-cyan-500 to-blue-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
               <Users className="h-6 w-6 text-white" />
             </div>
-            <h3 className="text-xl font-semibold mb-2">Industry Mentors</h3>
+            <h3 className="text-xl font-semibold mb-2">Free Mentorship</h3>
             <p className="text-slate-300">
-              Learn from experienced professionals who provide guidance throughout your learning journey.
+              "Of the students, by the students, for the students" is our tagline.
             </p>
           </div>
 
