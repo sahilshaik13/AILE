@@ -29,9 +29,9 @@ export default function Navbar() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <div className="bg-gradient-to-r from-cyan-500 to-blue-500 p-2 rounded-lg">
-            <img src="/path-to-your-logo.png" alt="Logo" className="h-6 w-6" />
-          </div>
+        <div className="bg-gradient-to-r from-cyan-500 to-blue-500 p-2 rounded-lg">
+          <img src="/logo/appignite logo.png" alt="Logo" className="h-12 w-12" />
+        </div>
           <span className="font-bold text-xl tracking-tight">
             <span className="text-cyan-400">App</span>
             <span className="text-white">Ignite</span>
