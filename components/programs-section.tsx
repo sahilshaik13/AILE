@@ -7,7 +7,7 @@ export default function BuildWithAISection() {
   const tabs = [
     {
       id: "about",
-      title: "About Build with AI",
+      title: "Build with AI",
       icon: <Rocket className="h-6 w-6" />,
       content: (
         <>
