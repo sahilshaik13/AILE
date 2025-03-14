@@ -21,10 +21,6 @@ export default function Footer() {
             </p>
           </div>
           <div>
-            <br></br>
-          </div>
-
-          <div>
             <h4 className="text-lg font-semibold mb-4">Company</h4>
             <ul className="space-y-2">
               <li>
