@@ -1,5 +1,4 @@
 "use client"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -25,8 +24,15 @@ export default function ContactSection() {
     e.preventDefault()
     setLoading(true)
 
-    const telegramBotToken = "7669570716:AAEcPDr0eNSyFp8zeV54ROajCayPhNXMQ84"
-    const chatId = "7578492787" // Replace with your actual chat ID
+    const telegramBotToken = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN
+    const chatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID
+
+    if (!telegramBotToken || !chatId) {
+      console.error("Telegram credentials not configured properly")
+      alert("Configuration error. Please try again later.")
+      setLoading(false)
+      return
+    }
 
     const messageText = `New Contact Form Submission:\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nMessage: ${formData.message}`
 
@@ -46,7 +52,7 @@ export default function ContactSection() {
       )
 
       if (!response.ok) {
-        throw new Error("Failed to send message")
+        throw new Error(`HTTP error! status: ${response.status}`)
       }
 
       alert("Thank you for your inquiry! We'll contact you soon.")
@@ -78,10 +84,6 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           <div className="bg-slate-800/30 rounded-2xl p-6 md:p-8 border border-slate-700">
             <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-            <div>
-              <br></br>
-            </div>
-
             <div className="space-y-6">
               <div className="flex items-start">
                 <div className="bg-gradient-to-r from-cyan-500 to-blue-500 w-10 h-10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
