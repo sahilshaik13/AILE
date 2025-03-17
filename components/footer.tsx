@@ -40,17 +40,17 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Resources</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
+                <Link href="/faqs" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
                   FAQs
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
+                <Link href="/privacy-policy" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
+                <Link href="/terms-of-service" className="text-slate-400 hover:text-cyan-400 transition-colors duration-300">
                   Terms of Service
                 </Link>
               </li>
