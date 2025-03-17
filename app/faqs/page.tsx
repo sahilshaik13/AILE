@@ -86,7 +86,7 @@ export default function FAQsPage() {
           <div>
             <h2 className="text-xl font-semibold">10. Will I receive a certificate after completing the program?</h2>
             <p className="text-slate-500">
-              Yes, upon successfully completing the program, participants will be awarded a <strong>certificate of completion</strong> to acknowledge their efforts and skills.
+              Yes, upon successfully completing the program, participants will be awarded a <strong>certificate of completion</strong> to acknowledge their efforts and skills. The certificate will be acknowledged as MSME registered enterprise.
             </p>
           </div>
           {/* FAQ 11 */}
@@ -122,7 +122,7 @@ export default function FAQsPage() {
           <div>
             <h2 className="text-xl font-semibold">15. Whom can I contact for further inquiries?</h2>
             <p className="text-slate-500">
-              Feel free to contact us via email at <strong>appignitelearning@outlook.com</strong> or WhatsApp us at <strong>+91 93471 51331</strong>. You can also visit our [social media/website] for updates and more details.
+            Feel free to contact us via email at <strong><a href="mailto:appignitelearning@outlook.com">appignitelearning@outlook.com</a></strong> or <strong><span className="text-green" style={{ color: "#25D366" }}>WhatsApp</span></strong> us at <strong><a href="https://wa.me/+919347151331">+91 93471 51331</a></strong>.
             </p>
           </div>
         </div>
