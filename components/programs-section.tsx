@@ -40,13 +40,13 @@ export default function BuildWithAISection() {
       content: (
         <ul className="list-disc list-inside text-slate-300 space-y-2">
           <li>
-            <strong className="text-cyan-400">Master AI Tools:</strong> Learn how to efficiently use cutting-edge AI technologies like machine learning frameworks, natural language processing (NLP) models, and computer vision libraries. Gain hands-on experience with popular tools such as TensorFlow, PyTorch, and OpenAI API to turn your innovative ideas into reality.
+            <strong className="text-cyan-400">Master AI Tools:</strong> Learn how to efficiently use cutting-edge AI technologies like machine learning frameworks, natural language processing (NLP) models, and computer vision libraries. Gain hands-on experience with popular tools such as TensorFlow, PyTorch, and Openrouter API to turn your innovative ideas into reality.
           </li>
           <li>
             <strong className="text-cyan-400">Prompt Engineering:</strong> Dive into the art of designing precise and effective prompts to interact with AI models. Understand how to structure queries, refine instructions, and optimize outputs to make AI work smarter for tasks ranging from creative writing to data analysis and problem-solving.
           </li>
           <li>
-            <strong className="text-cyan-400">Environment Adaptability:</strong> Adapt to diverse work environments by mastering multiple tools, platforms, and workflows. Seamlessly integrate AI technologies into web apps, mobile platforms, or standalone systems, and collaborate across teams using the latest tech stacks and APIs.
+            <strong className="text-cyan-400">Environment Adaptability:</strong> Adapt to diverse work environments by mastering multiple tools, platforms, and workflows. Seamlessly integrate AI technologies into web apps or standalone systems, and collaborate across teams using the latest tech stacks and APIs.
           </li>
           <li>
             <strong className="text-cyan-400">Real-World Application:</strong> Leverage AI to address global challenges and innovate in fields like healthcare, education, finance, and sustainability. Develop personalized recommendation systems, automate tedious workflows, and use AI to gain actionable insights from complex datasets.
