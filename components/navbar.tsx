@@ -52,7 +52,7 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden md:block z-10">
-          <Link href="https://forms.office.com/r/k5qyftFgKa" className="w-full">
+          <Link href="https://aile-registrations.vercel.app" className="w-full">
             <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
               Apply Now <Zap className="ml-2 h-4 w-4" />
             </Button>
@@ -95,7 +95,7 @@ export default function Navbar() {
                   ))}
                 </nav>
                 <div className="mt-auto pt-8">
-                  <Link href="https://forms.office.com/r/k5qyftFgKa" className="w-full">
+                  <Link href="https://aile-registrations.vercel.app" className="w-full">
                     <Button className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white">
                       Apply Now <Zap className="ml-2 h-4 w-4" />
                     </Button>
